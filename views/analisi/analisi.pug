@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block append meta
+  title #{stock.name} - Informazioni, Analisi Tecnica, Target e Rassegna Stampa
+  meta(name="description" content="Analisi, Target price e Rassegna Stampa di " + stock.name) 
+  meta(name="keywords" content=stock.name + ", analisi, target, price, informazioni, rassegna, stampa, titolo")
+
+  meta(name="og:url" content=proj_url + '/analisi/' + stock.encodedName + '?isin=' + stock.isin)
+  meta(name="og:type" content="website")
+  meta(name="og:title" content=stock.name + " - Informazioni, Analisi Tecnica e Rassegna Stampa")
+  meta(name="og:site_name" content=proj_name)
+  meta(name="og:description" content="Analisi, Target price e Rassegna Stampa di " + stock.name)
+  meta(name="og:image" content=proj_url + "/assets/images/borsa-milano.jpg")
+
+  link(rel="canonical", href=proj_url + '/analisi/' + stock.encodedName + '?isin=' + stock.isin)
+
+block main 
+  main
+    include ../../components/analisi/stock_alerts/stock_alerts.pug
+    include ../../components/analisi/stock_info/stock_info.pug
+
+block prepend footer
+  include ../../components/shared/disclaimer/disclaimer.pug

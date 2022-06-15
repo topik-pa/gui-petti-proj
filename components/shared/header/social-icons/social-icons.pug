@@ -1,0 +1,32 @@
+- 
+  let socials = [
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/tradingradar',
+      icon: 'icon-facebook'
+    },
+    {
+      name: 'Telegram',
+      url: 'https://t.me/+SrroSvoT8w00ZWM8',
+      icon: 'icon-telegram'
+    },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/TradingradarN',
+      icon: 'icon-twitter'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/markopavan/',
+      icon: 'icon-linkedin2'
+    },
+    {
+      name: 'Mail',
+      url: 'mailto:info@tradingradar.net',
+      icon: 'icon-mail2'
+    }
+  ]
+div(id="socials")
+  each social in socials
+    a(href=social.url, title=social.name, target="_blank", rel="noopener noreferrer")
+      i(class=social.icon)

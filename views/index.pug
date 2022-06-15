@@ -1,0 +1,32 @@
+extends layout.pug
+
+block append meta
+  title #{proj_name}
+  meta(name="description" content="")
+  meta(name="keywords" content="")
+
+  meta(name="og:url" content=proj_url)
+  meta(name="og:type" content="website")
+  meta(name="og:title" content=proj_name)
+  meta(name="og:site_name" content=proj_name)
+  meta(name="og:description" content="")
+
+  link(rel="canonical", href=proj_url)
+
+block main 
+  main
+    div(class="stocks") 
+      table
+        thead
+          tr
+            th P1 
+            th P2 
+            th Bet 1
+            th Bet 2
+        tbody 
+          each stock in stocks
+            tr
+              td #{stock.P1}
+              td #{stock.P2}
+              td #{stock.P1_bet}
+              td #{stock.P2_bet}

@@ -1,0 +1,3 @@
+#home main section:nth-child(even) {
+  background-color: var(--lighter-gray);
+}

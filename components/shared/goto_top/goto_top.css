@@ -1,0 +1,19 @@
+#goto_top {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: var(--secondary);
+  color: var(--tertiary);
+  border-radius: var(--border-radius-small);
+  padding: var(--x-small-space);
+  margin: var(--small-space);
+  cursor: pointer;
+  font-size: var(--font-size-big);
+}
+#goto_top:hover {
+  filter: brightness(90%);
+}
+#goto_top.visible {
+  display: block;
+}

@@ -1,0 +1,73 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow:0 0 1px transparent;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .03rem;
+  color: var(--primary);
+  background-color: var(--white);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+em {
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: var(--x-small-space);
+  line-height: 110%;
+}
+
+main {
+  padding-top: var(--view-padding);
+}
+main section {
+  margin-bottom: var(--section-margin);
+  padding: var(--view-padding);
+}
+
+ul {
+  list-style: auto;
+  margin-left: var(--x-large-space);
+}
+li {
+  margin: var(--x-small-space);
+}
+
+.hide {
+  display: none!important;
+}
+
+
+.img_icon::before {
+  content: ' ';
+  display: block;
+  width: var(--x-large-space);
+  height: var(--x-large-space);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.borsa-italiana-logo::before {
+  background-image: url('/assets/images/sources/borsa-italiana-logo.png');
+}
+.il-sole-24-ore-logo::before {
+  background-image: url('/assets/images/sources/il-sole-24-ore-logo.png');
+}
+.milano-finanza-logo::before {
+  background-image: url('/assets/images/sources/milano-finanza-logo.png');
+}
+.soldi-on-line-logo::before {
+  background-image: url('/assets/images/sources/soldi-on-line-logo.png');
+}
+.teleborsa-logo::before {
+  background-image: url('/assets/images/sources/teleborsa-logo.png');
+}
+.repubblica-aff-e-fin-logo::before {
+  background-image: url('/assets/images/sources/repubblica-aff-e-fin-logo.png');
+}

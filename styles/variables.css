@@ -1,0 +1,48 @@
+:root {
+  /* COLORS */
+  --white: #fafafa;
+  --lighter-gray: #eeeeee;
+  --light-gray: #dddddd;
+  --gray: #787878;
+  --dark-gray: #666666;
+  --darker-gray: #4d4d4d;
+  --black: #1a1a1a;
+
+  --blue:#3e78e8;
+  --red: #cd212a;
+  --green: #008c45;
+
+  --primary: var(--black);
+  --secondary: var(--blue);
+  --tertiary: var(--white);
+  --error: var(--red);
+  --success: var(--green);
+  --link: var(--blue);
+
+  /* FONT SIZES */
+  --font-size-very-small: .85rem;
+  --font-size-small: .9rem;
+  --font-size-normal: 1rem;
+  --font-size-big: 1.2rem;
+  --font-size-bigger: 1.5rem;
+  --font-size-huge: 1.8rem;
+  --font-size-biggest: 2.2rem;
+
+  /* DIMENSIONS */
+  --xx-small-space: .2rem;
+  --x-small-space: .5rem;
+  --small-space: .7rem;
+  --normal-space: 1rem;
+  --large-space: 1.5rem;
+  --x-large-space: 2rem;
+  --xx-large-space: 3rem;
+
+  --view-padding: var(--large-space);
+  --section-margin: var(--xx-large-space);
+  --scrollable-section: calc(var(--large-space) * 10);
+
+  /* BORDER RADIUS */
+  --border-radius-small: .3rem;
+  --border-radius-big: .6rem;
+  --border-radius-round: 50%;
+}

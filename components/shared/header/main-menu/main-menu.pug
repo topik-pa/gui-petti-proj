@@ -1,0 +1,21 @@
+- 
+  let pages = [
+    {
+      name: 'Home',
+      url: '/'
+    },
+    {
+      name: 'Contatti',
+      url: '/contatti'
+    }
+  ] 
+i(class="icon-menu") 
+nav(id="main-menu")
+  ul
+    each page in pages
+      li
+        a(href=page.url, title=page.name) #{page.name.toUpperCase()}
+
+
+
+  

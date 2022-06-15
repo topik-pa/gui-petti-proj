@@ -1,0 +1,18 @@
+#err404 {
+  text-align: center;
+}
+
+#err404 p {
+  margin-bottom: 3rem;
+}
+
+#err404 footer .fb-like {
+  display: none;
+}
+
+#err404 #stocks_list > * {
+  display: none;
+}
+#err404 #select_stock {
+  display: block;
+}

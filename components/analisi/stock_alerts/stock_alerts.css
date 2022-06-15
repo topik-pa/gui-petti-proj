@@ -1,0 +1,31 @@
+#stock_alerts  {
+  height: 0;
+  overflow-y: hidden;
+  transition: height .8s;
+  margin: 0;
+  padding: 0 var(--view-padding);
+}
+
+#stock_alerts h3 {
+  margin: 0;
+  margin-bottom: var(--normal-space);
+}
+
+#stock_alerts .alert {
+  margin: 0;
+  padding: var(--xx-small-space) 0;
+  border-bottom: 1px solid var(--gray);
+}
+
+#stock_alerts .red {
+  background-color: rgba(205, 33, 42, .2);
+}
+#stock_alerts .green {
+  background-color: rgba(0, 140, 69, .2);
+}
+
+#stock_alerts.show {
+  height: 11rem;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--light-gray);
+}

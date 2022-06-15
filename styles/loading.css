@@ -1,0 +1,27 @@
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loading {
+  position: relative;
+}
+.loading:after {
+  content: '';
+  position: absolute;
+  cursor: wait;
+  border: var(--small-space) solid var(--white);
+  border-top: var(--small-space) solid var(--blue);
+  border-radius: 50%;
+  width: var(--x-large-space);
+  height: var(--x-large-space);
+  animation: spin .5s linear infinite;
+  top: 50%;
+  right: 50%;
+  margin-top: calc(-1 * var(--x-large-space));
+  margin-right: calc(-1 * var(--x-large-space));
+}
+.loading * {
+  pointer-events: none;
+}
+

@@ -1,0 +1,120 @@
+
+section(id="stock_info")
+  h1 #[span #{stock.name}] - Informazioni, Analisi Tecnica e Rassegna Stampa
+  div(class="intro")
+    span Nome: #{stock.name}
+    span ISIN: #{stock.isin}
+  div(class="info")
+    h2 Informazioni #{stock.name}
+    p Valore e data del #[em dividendo]; le #[em medie mobili] a 20, 40 e 100 giorni; i #[em massimi e minimi] (assoluti e relativi all'ultimo anno) e le #[em performance] fatte registrare dal titolo #{stock.name}.
+    div 
+      div(class="last-price") Ultimo prezzo rilevato (€): 
+        span
+      div(class="volatility") Volatilità: 
+        span
+      div(class="first")
+        div(class="profile")
+          h3 Profilo 
+          div 
+            a(href="#", target="_blank", rel="noopener noreferrer") [continua sul sito originale]
+        div(class="comment")
+          h3 Commento
+          div 
+            a(href="#", target="_blank", rel="noopener noreferrer") [continua sul sito originale]
+      div(class="second")
+        div(class="dividends")
+          h3 Dividendi 
+            a(href="#", target="_blank", rel="noopener noreferrer") [Fonte]
+          div 
+            div(class="divYield") Div. Yield (%): 
+              span
+            div(class="divValue") Valore dividendo (€): 
+              span
+            div(class="lastDiv") Data ultimo dividendo: 
+              span
+        div(class="average")
+          h3 Medie mobili 
+            a(href="#", target="_blank", rel="noopener noreferrer") [Fonte]
+          div 
+            div(class="mm20") Media mobile 20 gg (€): 
+              span
+            div(class="mm40") Media mobile 40 gg (€): 
+              span
+            div(class="mm100") Media mobile 100 gg (€): 
+              span
+        div(class="minmax")
+          h3 Minimi e massimi
+            a(href="#", target="_blank", rel="noopener noreferrer") [Fonte]
+          div 
+            div(class="absMax") Massimo assoluto: 
+              span
+            div(class="absMin") Minimo assoluto: 
+              span
+            div(class="max") Massimo anno corrente: 
+              span
+            div(class="min") Minimo anno corrente: 
+              span              
+        div(class="performance")
+          h3 Performance
+            a(href="#", target="_blank", rel="noopener noreferrer") [Fonte]
+          div 
+            div(class="perf1M") Performance (1 mese): 
+              span
+            div(class="perf6M") Performance (6 mesi): 
+              span
+            div(class="perf1Y") Performance (1 anno): 
+              span
+  div(class="analysis")
+    h2 Analisi Tecnica #{stock.name}
+    p Le #[em analisi tecniche] su #{stock.name} dei principali analisti online: #[em target price, resistenze, supporti, RSI, rating e giudizi complessivi].
+    div 
+      div(class="borsa-italiana-logo img_icon")
+        h3 
+          a(href="#", target="_blank", rel="noopener noreferrer") Borsa Italiana
+        div(class="resistance") Resistenza (€): 
+          span
+        div(class="support") Supporto (€): 
+          span
+        div(class="rsi") RSI: 
+          span
+        div(class="evaluation") Valutazione: 
+          span
+        div(class="rating") Rating [0-4]: 
+          span
+      div(class="il-sole-24-ore-logo img_icon")
+        h3 
+          a(href="#", target="_blank", rel="noopener noreferrer") Il Sole 24 Ore
+        div(class="short-tend") Tendenza breve periodo: 
+          span
+        div(class="med-tend") Tendenza medio periodo: 
+          span
+      div(class="milano-finanza-logo img_icon")
+        h3 
+          a(href="#", target="_blank", rel="noopener noreferrer") Milano Finanza
+        div(class="rating") Rating [A-E]: 
+          span
+        div(class="risk") Risk [0-100]: 
+          span
+        div(class="rsi") RSI: 
+          span                
+      div(class="soldi-on-line-logo img_icon")
+        h3 
+          a(href="#", target="_blank", rel="noopener noreferrer") SoldiOnLine
+        div(class="target") Target price (€): 
+          span
+        div(class="evaluation") Giudizio: 
+          span      
+      div(class="teleborsa-logo img_icon")
+        h3 
+          a(href="#", target="_blank", rel="noopener noreferrer") Teleborsa
+        div(class="resistance") Resistenza (€): 
+          span
+        div(class="support") Supporto (€): 
+          span
+        div(class="trend") Trend: 
+          span        
+
+  div(class="news")
+    h2 Rassegna Stampa #{stock.name}
+    p Le #[em ultime notizie] sul titolo #{stock.name} prese in tempo reale dalle nostre fonti esterne.
+    ul 
