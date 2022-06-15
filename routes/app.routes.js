@@ -4,9 +4,9 @@ let stocks
 function getData () {
   const options = {
     method: 'GET',
-    hostname: 'localhost',
-    port: 8080,
-    path: '/api'
+    hostname: 'petti-proj.herokuapp.com',
+    port: null,
+    path: '/matches'
   }
   const request = http.request(options, function (response) {
     const chunks = []
