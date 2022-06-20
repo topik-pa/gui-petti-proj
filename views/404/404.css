@@ -9,10 +9,3 @@
 #err404 footer .fb-like {
   display: none;
 }
-
-#err404 #stocks_list > * {
-  display: none;
-}
-#err404 #select_stock {
-  display: block;
-}

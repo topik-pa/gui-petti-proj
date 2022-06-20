@@ -1,5 +1,5 @@
 const http = require('http')
-let stocks
+let matches
 
 function getData () {
   const options = {
@@ -16,7 +16,7 @@ function getData () {
     response.on('end', function () {
       const body = Buffer.concat(chunks).toString()
       try {
-        stocks = JSON.parse(body)
+        matches = JSON.parse(body)
       } catch (error) {
         console.error(error)
       }
@@ -29,13 +29,30 @@ function getData () {
 }
 getData()
 
+function getMatchFromId (id) {
+  if (!matches.length) return
+  for (const match of matches) {
+    if (match.id === +id) {
+      return match
+    }
+  }
+}
+
 module.exports = app => {
   app.get('/', (req, res) => {
-    res.locals.stocks = stocks
+    res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })
   })
+  app.get('/match/', (req, res) => {
+    const match = getMatchFromId(req.query.id)
+    const breadcrumbs = [
+      {
+        name: req.query.id
+      }
+    ]
+    res.render('match/match', { id: 'match', title: 'Match', url: req.url, match, breadcrumbs })
+  })
   app.get('*', function (req, res) {
-    res.locals.stocks = stocks
     res.render('404/404', { id: 'err404', title: 'Error 404' })
   })
 }

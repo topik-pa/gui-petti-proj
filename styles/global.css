@@ -71,3 +71,11 @@ li {
 .repubblica-aff-e-fin-logo::before {
   background-image: url('/assets/images/sources/repubblica-aff-e-fin-logo.png');
 }
+
+table th {
+  font-weight: bold;
+  text-align: left;
+}
+table th, td {
+  border: 1px solid gray;
+}

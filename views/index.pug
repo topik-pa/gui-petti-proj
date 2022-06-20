@@ -15,7 +15,7 @@ block append meta
 
 block main 
   main
-    div(class="stocks") 
+    div(class="matches") 
       table
         thead
           tr
@@ -24,9 +24,22 @@ block main
             th Bet 1
             th Bet 2
         tbody 
-          each stock in stocks
+          each match in matches
             tr
-              td #{stock.P1}
-              td #{stock.P2}
-              td #{stock.P1_bet}
-              td #{stock.P2_bet}
+              td #{match.P1}
+              td #{match.P2}
+              td #{match.P1_bet}
+              td #{match.P2_bet}
+    div(class="matches")
+      ul
+        each match in matches
+          li 
+            a(href=`/match/?id=${match.id}`) #{match.P1} vs. #{match.P2}
+    div(class="matches")
+        each match in matches
+          div(class="match")
+            h3 #{match.P1} vs. #{match.P2}
+            div
+              div #{match.P1} #{match.P1_bet}
+              div #{match.P2} #{match.P2_bet}
+              a(href=`/match/?id=${match.id}`) Details...
