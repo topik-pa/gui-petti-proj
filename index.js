@@ -32,7 +32,6 @@ app.use((req, res, next) => {
 })
 
 // ROUTES
-require('./routes/stocks.routes')(app)
 require('./routes/app.routes')(app)
 
 app.listen(PORT, () => {
