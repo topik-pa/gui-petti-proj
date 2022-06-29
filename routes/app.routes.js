@@ -27,6 +27,20 @@ function getData () {
     console.error(error)
   })
 }
+
+function setCorrectScore () {
+  if (!matches.length) return
+  for (const match of matches) {
+    if (match.CorrectScore === undefined) continue
+    if (match.CorrectScore['20'] < match.CorrectScore['02']) {
+      match.favCorrectScore = match.CorrectScore['20']
+    } else {
+      match.favCorrectScore = match.CorrectScore['02']
+    }
+  }
+  // delete match.CorrectScore
+}
+
 getData()
 
 function getMatchFromId (id) {
@@ -40,6 +54,7 @@ function getMatchFromId (id) {
 
 module.exports = app => {
   app.get('/', (req, res) => {
+    setCorrectScore(matches)
     res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })
   })
