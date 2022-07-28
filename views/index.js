@@ -11,6 +11,18 @@ const index = {
         columns: [
           [
             {
+              title: 'Date',
+              field: 'date',
+              sortable: true,
+              valign: 'middle'
+            },
+            {
+              title: 'Hours',
+              field: 'hours',
+              sortable: true,
+              valign: 'middle'
+            },
+            {
               title: 'P1 Name',
               field: 'p1Name',
               sortable: true,
@@ -35,11 +47,16 @@ const index = {
               sortable: true,
               valign: 'middle'
             },
-
             {
               title: 'P1 Bet',
               field: 'p1Bet',
               sortable: true,
+              valign: 'middle'
+            },
+            {
+              title: 'P1 Inv.',
+              field: 'p1Inv',
+              sortable: false,
               valign: 'middle'
             },
             {
@@ -68,10 +85,21 @@ const index = {
               sortable: true,
               valign: 'middle'
             },
-
             {
               title: 'Over',
               field: 'over',
+              sortable: true,
+              valign: 'middle'
+            },
+            {
+              title: 'Under',
+              field: 'under',
+              sortable: true,
+              valign: 'middle'
+            },
+            {
+              title: 'Total',
+              field: 'total',
               sortable: true,
               valign: 'middle'
             },
@@ -82,10 +110,22 @@ const index = {
               valign: 'middle'
             },
             {
-              title: 'Field',
+              title: 'Surface',
               field: 'field',
               sortable: true,
               valign: 'middle'
+            },
+            {
+              title: 'Tournament',
+              field: 'tournament',
+              sortable: true,
+              valign: 'right'
+            },
+            {
+              title: 'Round',
+              field: 'round',
+              sortable: false,
+              valign: 'right'
             },
             {
               title: 'Link',

@@ -24,19 +24,28 @@ block main
         tbody 
           each match in matches
             tr
+              td #{match.date}
+              td #{match.hours}
               td #{match.P1.name}
                 small Rank: #{match.P1.rank}
+                small Handicap: #{match.P1.Handicap}
               td #{match.P2.name}
                 small Rank: #{match.P2.rank}
               td #{match.P1.odds}
+                small Curr Odds: #{match.P1.CurrOdds}
               td #{match.P2.odds}
               td #{match.P1.bet}
+              td #{match.P1.inv}
               td #{match.P2.bet}
               td #{match.favCorrectScore}
               td #{match.P1.Handicap}
               td #{match.P2.Handicap}
               td #{match.Over}
+              td #{match.Under}
+              td #{match.Total}
               td #{match.type}
               td #{match.field}
+              td #{match.tournament}
+              td #{match.round}
               td 
                 a(href=`https://www.tennisexplorer.com/match-detail/?id=${match.id}`, target="_blank", rel="noopener noreferrer") link

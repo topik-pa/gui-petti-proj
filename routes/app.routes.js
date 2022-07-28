@@ -4,8 +4,8 @@ let matches
 function getData () {
   const options = {
     method: 'GET',
-    hostname: 'petti-proj.herokuapp.com',
-    port: null,
+    hostname: 'localhost',
+    port: 8080,
     path: '/matches'
   }
   const request = http.request(options, function (response) {
