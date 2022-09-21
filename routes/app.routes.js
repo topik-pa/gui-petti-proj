@@ -41,6 +41,77 @@ function setCorrectScore () {
   // delete match.CorrectScore
 }
 
+function setRangeRank () {
+  if (!matches.length) return
+  const ranges = [
+    1,
+    6,
+    10,
+    30,
+    60,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    550,
+    600,
+    650,
+    700,
+    750,
+    800,
+    850,
+    900,
+    950,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+    2000,
+    2100,
+    2200,
+    2300,
+    2400,
+    2500,
+    2600,
+    2700,
+    2800,
+    2900,
+    3000]
+  for (const match of matches) {
+    const p1Rank = parseInt(match.P1.rank)
+    const p2Rank = parseInt(match.P2.rank)
+
+    let p1RangeRank = ranges[ranges.length - 1]
+    let p2RangeRank = ranges[ranges.length - 1]
+
+    for (let i = 0; i < ranges.length; i++) {
+      if (p1Rank < ranges[i]) {
+        p1RangeRank = ranges[i - 1]
+        match.P1.rangeRank = p1RangeRank
+        break
+      }
+    }
+    for (let i = 0; i < ranges.length; i++) {
+      if (p2Rank < ranges[i]) {
+        p2RangeRank = ranges[i - 1]
+        match.P2.rangeRank = p2RangeRank
+        break
+      }
+    }
+  }
+}
+
 getData()
 
 function getMatchFromId (id) {
@@ -55,6 +126,7 @@ function getMatchFromId (id) {
 module.exports = app => {
   app.get('/', (req, res) => {
     setCorrectScore(matches)
+    setRangeRank(matches)
     res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })
   })
