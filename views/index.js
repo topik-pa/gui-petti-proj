@@ -89,7 +89,6 @@ function sortTable () {
 
 const index = {
   init: async () => {
-    console.log(origMatches)
     resetTable(origMatches)
     filterTable()
     sortTable()
