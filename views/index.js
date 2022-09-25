@@ -1,262 +1,98 @@
+const $table = document.getElementById('table')
+// eslint-disable-next-line no-undef
+const origMatches = matches
+let currentMatches = origMatches
 
-const initTable = function () {
-  const $table = $('#table')
-  const $remove = $('#remove')
-  let selections = []
-  $(function () {
-    $table.bootstrapTable('destroy')
-    $table.bootstrapTable({
-      columns: [
-        [
-          {
-            title: 'Date',
-            field: 'date',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Hours',
-            field: 'hours',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Name',
-            field: 'p1Name',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Rank',
-            field: 'p1Rank',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Range Rank',
-            field: 'p1RangeRank',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Name',
-            field: 'p2Name',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Rank',
-            field: 'p2Rank',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Range Rank',
-            field: 'p2RangeRank',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Odds',
-            field: 'p1Odds',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Odds',
-            field: 'p2Odds',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Bet',
-            field: 'p1Bet',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P1 Inv.',
-            field: 'p1Inv',
-            sortable: false,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Bet',
-            field: 'p2Bet',
-            sortable: true,
-            valign: 'middle'
-          },
-
-          {
-            title: 'Fav Correct Score',
-            field: 'favCorrectScore',
-            sortable: true,
-            valign: 'middle'
-          },
-
-          {
-            title: 'P1 Handicap ',
-            field: 'p1Handicap ',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'P2 Handicap ',
-            field: 'p2Handicap ',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Over',
-            field: 'over',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Under',
-            field: 'under',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Total',
-            field: 'total',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Type',
-            field: 'type',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Surface',
-            field: 'field',
-            sortable: true,
-            valign: 'middle'
-          },
-          {
-            title: 'Tournament',
-            field: 'tournament',
-            sortable: true,
-            valign: 'right'
-          },
-          {
-            title: 'Round',
-            field: 'round',
-            sortable: false,
-            valign: 'right'
-          },
-          {
-            title: 'Link',
-            field: 'link',
-            sortable: false,
-            valign: 'right'
-          }]],
-
-      classes: 'table table-hover table-no-bordered',
-      toolbar: '#toolbar',
-      buttonsClass: 'outline-secondary',
-      sortClass: undefined,
-      undefinedText: '-',
-      striped: true,
-      sortName: 'number',
-      sortOrder: 'desc',
-      sortStable: false,
-      sortable: true,
-      pagination: true,
-      paginationLoop: false,
-      onlyInfoPagination: false,
-      pageNumber: 1,
-      pageSize: 5,
-      pageList: [1, 3, 5, 10, 'ALL'],
-      paginationPreText: 'Previous',
-      paginationNextText: 'Next',
-      selectItemName: 'btSelectItem',
-      smartDisplay: true,
-      search: true,
-      searchOnEnterKey: false,
-      strictSearch: false,
-      searchText: '',
-      searchTimeOut: '500',
-      trimOnSearch: true,
-      searchalign: 'right',
-      buttonsAlign: 'right',
-      toolbarAlign: 'left',
-      paginationVAlign: 'bottom',
-      paginationHAlign: 'right',
-      paginationDetailHAlign: 'left',
-      showHeader: true,
-      showFooter: false,
-      showColumns: true,
-      showRefresh: true,
-      showToggle: false,
-      showExport: true,
-      showPaginationSwitch: true,
-      showFullscreen: false,
-      minimumCountColumns: 5,
-      idField: undefined,
-      clickToSelect: false,
-      uniqueId: 'id',
-      singleSelect: false,
-      checkboxHeader: true,
-      maintainSelected: true
-    // reorderableColumns: true,
-    // iconsPrefix: "material-icons", // material-icons of fa (font awesome)
-    // icons: {
-    //   paginationSwitchDown: "material-icons-collapse-down icon-chevron-down",
-    //   paginationSwitchUp: "material-icons-collapse-up icon-chevron-up",
-    //   refresh: "material-icons-refresh icon-refresh",
-    //   toggle: "material-icons-list-alt icon-list-alt",
-    //   columns: "material-icons-th icon-th",
-    //   detailOpen: "glyphicon-plus icon-plus",
-    //   detailClose: "glyphicon-minus icon-minus"
-    // }
-    })
-    $table.on(
-      'check.bs.table uncheck.bs.table ' +
-'check-all.bs.table uncheck-all.bs.table',
-      function () {
-        $remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
-        selections = getIdSelections()
-      })
-
-    $remove.click(function () {
-      const ids = getIdSelections()
-      $table.bootstrapTable('remove', {
-        field: 'id',
-        values: ids
-      })
-
-      $remove.prop('disabled', true)
-    })
-    $('[data-toggle="dropdown"] >i')
-      .removeClass('glyphicon-export')
-      .addClass('fa-download')
-  })
-  function getIdSelections () {
-    return $.map($table.bootstrapTable('getSelections'), function (row) {
-      return row.id
-    })
+function resetTable (rows) {
+  const $tBody = $table.getElementsByTagName('tbody')[0]
+  const $tCaption = $table.getElementsByTagName('span')[0]
+  $tBody.innerHTML = ''
+  for (const row of rows) {
+    const $tr = document.createElement('tr')
+    $tr.innerHTML =
+    `
+      <td>${row.date}</td>
+      <td>${row.hours}</td>
+      <td>${row.P1.name}</td>
+      <td>${row.P1.rank}</td>
+      <td>${row.P1.rangeRank}</td>
+      <td>${row.P2.name}</td>
+      <td>${row.P2.rank}</td>
+      <td>${row.P2.rangeRank}</td>
+      <td>${row.P1.odds}</td>
+      <td>${row.P2.odds}</td>
+      <td>${row.P1.bet}</td>
+      <td>${row.P1.inv}</td>
+      <td>${row.P2.bet}</td>
+      <td>${row.favCorrectScore}</td>
+      <td>${row.P1.Handicap}</td>
+      <td>${row.P2.Handicap}</td>
+      <td>${row.Over}</td>
+      <td>${row.Under}</td>
+      <td>${row.Total}</td>
+      <td>${row.type}</td>
+      <td>${row.field}</td>
+      <td>${row.tournament}</td>
+      <td>${row.round}</td>
+      <td><a href="https://www.tennisexplorer.com/match-detail/?id=${row.id}" target="_blank" rel="noopener noreferrer">link</a></td>
+    `
+    $tBody.appendChild($tr)
   }
-  function actionFormatter (value, row, index) {
-    return ['<button class="remove btn btn-danger btn-sm">Delete</button>'].join(
-      '')
-  }
-  window.actionEvents = {
-    'click .remove': function (e, value, row, index) {
-      $table.bootstrapTable('remove', {
-        field: 'id',
-        values: [row.id]
+  $tCaption.innerText = rows.length
+}
+
+function filterTable () {
+  const $inputs = $table.getElementsByTagName('thead')[0].getElementsByTagName('input')
+  const setFilter = function () {
+    currentMatches = origMatches
+    for (const $input of $inputs) {
+      const filter = $input.dataset.filter
+      if (filter === undefined || filter === '') continue
+      currentMatches = currentMatches.filter((match) => {
+        const pathArr = $input.dataset.path.split(',')
+        const path0 = pathArr[0]
+        const path1 = pathArr[1] || undefined
+        return path1 === undefined ? match[path0].toString().includes($input.value) : match[path0][path1].toString().includes($input.value)
       })
     }
+  }
+  for (const $input of $inputs) {
+    $input.addEventListener('input', (e) => {
+      e.target.dataset.filter = e.target.value
+      setFilter()
+      resetTable(currentMatches)
+    })
+  }
+}
+
+function sortTable () {
+  const $arrows = $table.getElementsByTagName('thead')[0].getElementsByTagName('span')
+  const setSorting = function (sorting, path) {
+    // currentMatches = origMatches
+    const pathArr = path.split(',')
+    const path0 = pathArr[0]
+    const path1 = pathArr[1] || undefined
+    if (sorting === 'asc') {
+      path1 === undefined ? currentMatches.sort((a, b) => (a[path0] > b[path0]) ? 1 : -1) : currentMatches.sort((a, b) => (a[path0][path1] > b[path0][path1]) ? 1 : -1)
+    } else {
+      path1 === undefined ? currentMatches.sort((a, b) => (a[path0] < b[path0]) ? 1 : -1) : currentMatches.sort((a, b) => (a[path0][path1] < b[path0][path1]) ? 1 : -1)
+    }
+  }
+  for (const $arrow of $arrows) {
+    $arrow.addEventListener('click', (e) => {
+      e.target.dataset.sorting = e.target.dataset.sorting === 'asc' ? 'desc' : 'asc'
+      setSorting(e.target.dataset.sorting, e.target.dataset.path)
+      resetTable(currentMatches)
+    })
   }
 }
 
 const index = {
   init: async () => {
-    initTable()
+    console.log(origMatches)
+    resetTable(origMatches)
+    filterTable()
+    sortTable()
   }
 }
 

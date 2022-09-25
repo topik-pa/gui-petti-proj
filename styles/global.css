@@ -24,7 +24,7 @@ p {
 }
 
 main {
-  padding-top: var(--view-padding);
+  padding: var(--view-padding);
 }
 main section {
   margin-bottom: var(--section-margin);

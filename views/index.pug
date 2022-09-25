@@ -12,40 +12,81 @@ block append meta
   meta(name="og:description" content="")
 
   link(rel="canonical", href=proj_url)
-
+  script. 
+    var matches = !{JSON.stringify(matches)};
 block main 
   main
-    div(class="matches container-fluid")
-    //-div(id="toolbar")
-      button(id="remove" class="btn btn-danger" disabled) Delete 
-        i(class="fas fa-trash-alt")
-  </div>
-      table(id="table")
-        tbody 
-          each match in matches
-            tr
-              td #{match.date}
-              td #{match.hours}
-              td #{match.P1.name}
-              td #{match.P1.rank}
-              td #{match.P1.rangeRank}
-              td #{match.P2.name}
-              td #{match.P2.rank}
-              td #{match.P2.rangeRank}
-              td #{match.P1.odds}
-              td #{match.P2.odds}
-              td #{match.P1.bet}
-              td #{match.P1.inv}
-              td #{match.P2.bet}
-              td #{match.favCorrectScore}
-              td #{match.P1.Handicap}
-              td #{match.P2.Handicap}
-              td #{match.Over}
-              td #{match.Under}
-              td #{match.Total}
-              td #{match.type}
-              td #{match.field}
-              td #{match.tournament}
-              td #{match.round}
-              td 
-                a(href=`https://www.tennisexplorer.com/match-detail/?id=${match.id}`, target="_blank", rel="noopener noreferrer") link
+    table(id="table")
+      caption Matches: 
+        span 55
+      thead
+        th 
+          div
+            span(class="sort", data-sorting="", data-path="date") &#8249;
+            input(type="text", data-path="date", placeholder="Search")
+        th 
+          div
+            span(class="sort", data-sorting="", data-path="hours") &#8249;
+            input(type="text", data-path="hours", placeholder="Search") 
+        th
+          div
+            span(class="sort", data-sorting="", data-path="P1,name") &#8249;
+            input(type="text", data-path="P1,name", placeholder="Search")
+        th 
+          div
+            span(class="sort", data-sorting="", data-path="P1,rank") &#8249;
+            input(type="text", data-path="P1,rank", placeholder="Search")
+        th 
+        th 
+          div
+            span(class="sort", data-sorting="", data-path="P2,name") &#8249;
+            input(type="text", data-path="P2,name", placeholder="Search")
+        th 
+          div
+            span(class="sort", data-sorting="", data-path="P2,rank") &#8249;
+            input(type="text", data-path="P2,rank", placeholder="Search")
+        th 
+        th 
+        th 
+        th 
+        th  
+        th 
+        th 
+        th 
+        th 
+        th  
+        th  
+        th  
+        th  
+        th  
+        th  
+        th  
+        th  
+      thead
+        th Date
+        th Hours 
+        th P1 Name 
+        th P1 Rank 
+        th P1 Range Rank 
+        th P2 Name 
+        th P2 Rank 
+        th P2 Range Rank 
+        th P1 Odds
+        th P2 Odds
+        th P1 Bet 
+        th P1 Inv. 
+        th P2 Bet 
+        th Fav Correct Score
+        th P1 Handicap
+        th P2 Handicap 
+        th Over 
+        th Under 
+        th Total 
+        th Type 
+        th Surface 
+        th Tournament 
+        th Round 
+        th  
+      tbody 
+
+
