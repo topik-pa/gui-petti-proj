@@ -1,5 +1,5 @@
 #home main {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 #home main section:nth-child(even) {
@@ -24,6 +24,7 @@ small {
 
 table {
   font-size: 1rem;
+  width: 100%;
 }
 
 caption {
@@ -31,12 +32,9 @@ caption {
   font-weight: bold;
 }
 
-th {
-  min-width: 10rem;
-}
 th div{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 th input{
@@ -48,6 +46,7 @@ th span{
   display: inline-block;
   transform-origin: center;
   cursor: pointer;
+  margin: 0 1rem;
 }
 th span[data-sorting=desc]{
   transform: rotate(-90deg);

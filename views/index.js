@@ -25,11 +25,6 @@ function resetTable (rows) {
       <td>${row.P1.inv}</td>
       <td>${row.P2.bet}</td>
       <td>${row.favCorrectScore}</td>
-      <td>${row.P1.Handicap}</td>
-      <td>${row.P2.Handicap}</td>
-      <td>${row.Over}</td>
-      <td>${row.Under}</td>
-      <td>${row.Total}</td>
       <td>${row.type}</td>
       <td>${row.field}</td>
       <td>${row.tournament}</td>
