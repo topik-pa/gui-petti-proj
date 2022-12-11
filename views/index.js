@@ -13,20 +13,20 @@ function resetTable (rows) {
     `
       <td>${row.date}</td>
       <td>${row.hours}</td>
-      <td>${row.P1.name}</td>
-      <td>${row.P1.rank}</td>
-      <td>${row.P1.rangeRank}</td>
-      <td>${row.P2.name}</td>
-      <td>${row.P2.rank}</td>
-      <td>${row.P2.rangeRank}</td>
-      <td>${row.P1.odds}</td>
-      <td>${row.P2.odds}</td>
-      <td>${row.P1.bet}</td>
-      <td>${row.P1.inv}</td>
-      <td>${row.P2.bet}</td>
+      <td>${row.player1.name}</td>
+      <td>${row.player1.rank}</td>
+      <td>${row.player1.rangeRank}</td>
+      <td>${row.player2.name}</td>
+      <td>${row.player2.rank}</td>
+      <td>${row.player2.rangeRank}</td>
+      <td>${row.player1.odds}</td>
+      <td>${row.player2.odds}</td>
+      <td>${row.player1.bet}</td>
+      <td>${row.player1.inv}</td>
+      <td>${row.player2.bet}</td>
       <td>${row.favCorrectScore}</td>
-      <td>${row.type}</td>
-      <td>${row.field}</td>
+      <td>${row.association}</td>
+      <td>${row.surface}</td>
       <td>${row.tournament}</td>
       <td>${row.round}</td>
       <td><a href="https://www.tennisexplorer.com/match-detail/?id=${row.id}" target="_blank" rel="noopener noreferrer">link</a></td>

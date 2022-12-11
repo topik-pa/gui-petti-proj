@@ -31,11 +31,11 @@ function getData () {
 function setCorrectScore () {
   if (!matches.length) return
   for (const match of matches) {
-    if (match.CorrectScore === undefined) continue
-    if (match.CorrectScore['20'] < match.CorrectScore['02']) {
-      match.favCorrectScore = match.CorrectScore['20']
+    if (match.correctScore === undefined) continue
+    if (match.correctScore['20'] < match.correctScore['02']) {
+      match.favCorrectScore = match.correctScore['20']
     } else {
-      match.favCorrectScore = match.CorrectScore['02']
+      match.favCorrectScore = match.correctScore['02']
     }
   }
   // delete match.CorrectScore
@@ -89,8 +89,8 @@ function setRangeRank () {
     2900,
     3000]
   for (const match of matches) {
-    const p1Rank = parseInt(match.P1.rank)
-    const p2Rank = parseInt(match.P2.rank)
+    const p1Rank = parseInt(match.player1.rank)
+    const p2Rank = parseInt(match.player2.rank)
 
     let p1RangeRank = ranges[ranges.length - 1]
     let p2RangeRank = ranges[ranges.length - 1]
@@ -98,14 +98,14 @@ function setRangeRank () {
     for (let i = 0; i < ranges.length; i++) {
       if (p1Rank < ranges[i]) {
         p1RangeRank = ranges[i - 1]
-        match.P1.rangeRank = p1RangeRank
+        match.player1.rangeRank = p1RangeRank
         break
       }
     }
     for (let i = 0; i < ranges.length; i++) {
       if (p2Rank < ranges[i]) {
         p2RangeRank = ranges[i - 1]
-        match.P2.rangeRank = p2RangeRank
+        match.player2.rangeRank = p2RangeRank
         break
       }
     }
