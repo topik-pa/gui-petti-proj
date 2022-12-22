@@ -89,21 +89,21 @@ function setRangeRank () {
     2900,
     3000]
   for (const match of matches) {
-    const p1Rank = parseInt(match.player1.rank)
-    const p2Rank = parseInt(match.player2.rank)
+    const p1OrigRank = parseInt(match.player1.origRank)
+    const p2OrigRank = parseInt(match.player2.origRank)
 
     let p1RangeRank = ranges[ranges.length - 1]
     let p2RangeRank = ranges[ranges.length - 1]
 
     for (let i = 0; i < ranges.length; i++) {
-      if (p1Rank < ranges[i]) {
+      if (p1OrigRank < ranges[i]) {
         p1RangeRank = ranges[i - 1]
         match.player1.rangeRank = p1RangeRank
         break
       }
     }
     for (let i = 0; i < ranges.length; i++) {
-      if (p2Rank < ranges[i]) {
+      if (p2OrigRank < ranges[i]) {
         p2RangeRank = ranges[i - 1]
         match.player2.rangeRank = p2RangeRank
         break

@@ -15,9 +15,11 @@ function resetTable (rows) {
       <td>${row.hours}</td>
       <td>${row.player1.name}</td>
       <td>${row.player1.rank}</td>
+      <td>${row.player1.origRank}</td>
       <td>${row.player1.rangeRank}</td>
       <td>${row.player2.name}</td>
       <td>${row.player2.rank}</td>
+      <td>${row.player2.origRank}</td>
       <td>${row.player2.rangeRank}</td>
       <td>${row.player1.odds}</td>
       <td>${row.player2.odds}</td>

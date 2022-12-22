@@ -1,5 +1,5 @@
 #home main {
-  overflow-x: auto;
+  /*overflow-x: auto;*/
 }
 
 #home main section:nth-child(even) {
@@ -53,4 +53,10 @@ th span[data-sorting=desc]{
 }
 th, td {
   padding: .3rem;
+}
+
+thead {
+  background: white;
+    position: sticky;
+    top: 0;
 }
