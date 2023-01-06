@@ -4,8 +4,8 @@ let matches
 function getData () {
   const options = {
     method: 'GET',
-    hostname: 'petti-proj.herokuapp.com',
-    port: null,
+    hostname: 'http://www.localhost',
+    port: 8080,
     path: '/matches'
   }
   const request = http.request(options, function (response) {
@@ -38,7 +38,6 @@ function setCorrectScore () {
       match.favCorrectScore = match.correctScore['02']
     }
   }
-  // delete match.CorrectScore
 }
 
 function setRangeRank () {
@@ -112,16 +111,16 @@ function setRangeRank () {
   }
 }
 
-getData()
-
-function getMatchFromId (id) {
+/* function getMatchFromId (id) {
   if (!matches.length) return
   for (const match of matches) {
     if (match.id === +id) {
       return match
     }
   }
-}
+} */
+
+getData()
 
 module.exports = app => {
   app.get('/', (req, res) => {
@@ -129,15 +128,6 @@ module.exports = app => {
     setRangeRank(matches)
     res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })
-  })
-  app.get('/match/', (req, res) => {
-    const match = getMatchFromId(req.query.id)
-    const breadcrumbs = [
-      {
-        name: req.query.id
-      }
-    ]
-    res.render('match/match', { id: 'match', title: 'Match', url: req.url, match, breadcrumbs })
   })
   app.get('*', function (req, res) {
     res.render('404/404', { id: 'err404', title: 'Error 404' })

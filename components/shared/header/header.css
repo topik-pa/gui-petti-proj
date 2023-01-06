@@ -5,10 +5,8 @@ header section {
   align-items: center;
 }
 
-header section:nth-child(1) {
-  background-color: var(--darker-gray);
-}
-header section:nth-child(2) {
-  position: relative;
+
+header {
+  background-color: var(--light-gray);
   border-bottom: 1px solid var(--blue);
 }

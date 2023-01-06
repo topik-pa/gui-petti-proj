@@ -2,21 +2,14 @@
   let prod = process.env.NODE_ENV === 'production'
   let proj_name = 'Petti-Proj'
   let proj_url = ''
-  let copy = 2022
+  let copy = 2023
   let owner = 'Marco Pavan'
-  let fbAppId = 000
-  let googleSiteVerification = ''
-  let sc_project = 000
-  let sc_security = ''
-  let GATagId = ''
 
 doctype html
 html(lang=locale)
   head
     block meta 
       meta(charset="utf-8")
-      meta(name="google-site-verification" content=googleSiteVerification)
-      meta(property="fb:app_id" content=fbAppId)
       meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
       meta(name="author" content=owner)
     link(rel="shortcut icon", href="/public/favicon.ico", type="image/x-icon")
@@ -29,22 +22,8 @@ html(lang=locale)
     block main
     block footer
       include ../components/shared/footer/footer.pug
-      include ../components/shared/cookie_layer/cookie_layer.pug
       include ../components/shared/goto_top/goto_top.pug
     if prod
-      div(id="fb-root")
       script(src='/dist/main.js')
-      script(async, defer, crossorigin="anonymous", src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v13.0&appId=" + fbAppId + "&autoLogAppEvents=1" nonce="MWhn9uhC")
-      script.
-        var sc_project = #{sc_project};
-        var sc_invisible = 1;
-        var sc_security = "#{sc_security}";
-      script(async, src='https://www.statcounter.com/counter/counter.js')
-      script(async, src="https://www.googletagmanager.com/gtag/js?id=" + GATagId)
-      script. 
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-109143172-1');
     else
       script(src='/scripts/index.js', type='module')

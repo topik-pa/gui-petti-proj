@@ -9,10 +9,10 @@ footer section {
 }
 
 footer section:nth-child(1) {
-  background-color: var(--darker-gray);
-  text-align: center;
-  padding: 0;
-  padding-top: 8px;
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer section:nth-child(2) {
