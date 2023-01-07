@@ -29,7 +29,7 @@ function resetTable (rows) {
       <td>${row.surface}</td>
       <td>${row.tournament}</td>
       <td>${row.round}</td>
-      <td><a href="https://www.tennisexplorer.com/match-detail/?id=${row.id}" target="_blank" rel="noopener noreferrer">link</a></td>
+      <td class="${row.dataOrigin}"><a href="https://www.tennisexplorer.com/match-detail/?id=${row.id}" target="_blank" rel="noopener noreferrer">link</a></td>
     `
     $tBody.appendChild($tr)
   }
