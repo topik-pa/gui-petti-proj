@@ -1,20 +1,7 @@
-#home main {
-  /*overflow-x: auto;*/
-}
 
 #home main section:nth-child(even) {
   background-color: var(--lighter-gray);
 }
-
-#home main .matches {
-  margin: 2rem;
-}
-
-#home main .match {
-  border-bottom: 1px solid gray;
-  padding-bottom: 1rem;
-}
-
 
 small {
   display: block;
@@ -29,6 +16,9 @@ table {
 
 caption {
   margin: 1rem 0;
+  text-align: left;
+}
+caption span {
   font-weight: bold;
 }
 
@@ -55,8 +45,21 @@ th, td {
   padding: .3rem;
 }
 
-thead {
-  background: white;
-    position: sticky;
-    top: 0;
+tbody tr:hover {
+  background-color: var(--darker-gray);
+  color: var(--white);
 }
+
+thead {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+}
+
+th.p1, td.p1 {
+  background-color: rgba(255, 102, 0, .1);
+}
+th.p2, td.p2 {
+  background-color: rgba(255, 0, 255, .1);
+}
+

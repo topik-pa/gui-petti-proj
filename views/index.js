@@ -13,17 +13,17 @@ function resetTable (rows) {
     `
       <td>${row.date}</td>
       <td>${row.hours}</td>
-      <td>${row.player1.name}</td>
-      <td>${row.player1.origRank}</td>
-      <td>${row.player1.rangeRank}</td>
-      <td>${row.player2.name}</td>
-      <td>${row.player2.origRank}</td>
-      <td>${row.player2.rangeRank}</td>
-      <td>${row.player1.odds}</td>
-      <td>${row.player2.odds}</td>
-      <td>${row.player1.bet}</td>
-      <td>${row.player1.inv}</td>
-      <td>${row.player2.bet}</td>
+      <td class="p1">${row.player1.name}</td>
+      <td class="p1">${row.player1.origRank}</td>
+      <td class="p1">${row.player1.rangeRank}</td>
+      <td class="p2">${row.player2.name}</td>
+      <td class="p2">${row.player2.origRank}</td>
+      <td class="p2">${row.player2.rangeRank}</td>
+      <td class="p1">${row.player1.odds}</td>
+      <td class="p2">${row.player2.odds}</td>
+      <td class="p1">${row.player1.bet}</td>
+      <td class="p1">${row.player1.inv}</td>
+      <td class="p2">${row.player2.bet}</td>
       <td>${row.favCorrectScore}</td>
       <td>${row.association}</td>
       <td>${row.surface}</td>

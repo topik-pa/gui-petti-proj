@@ -4,20 +4,13 @@ block append meta
   title #{proj_name}
   meta(name="description" content="")
   meta(name="keywords" content="")
-
-  meta(name="og:url" content=proj_url)
-  meta(name="og:type" content="website")
-  meta(name="og:title" content=proj_name)
-  meta(name="og:site_name" content=proj_name)
-  meta(name="og:description" content="")
-
   link(rel="canonical", href=proj_url)
   script. 
     var matches = !{JSON.stringify(matches)};
 block main 
   main
     table(id="table")
-      caption Matches: 
+      caption Total matches: 
         span
       thead
         th 
@@ -35,7 +28,6 @@ block main
         th 
           div
             span(class="sort", data-sorting="", data-path="player1,rank") &#8249;
-            input(type="text", data-path="player1,rank", placeholder="Search")
         th 
         th 
           div
@@ -44,7 +36,6 @@ block main
         th 
           div
             span(class="sort", data-sorting="", data-path="player2,rank") &#8249;
-            input(type="text", data-path="player2,rank", placeholder="Search")
         th 
         th 
         th 
@@ -60,17 +51,17 @@ block main
       thead
         th Date
         th Hours 
-        th P1 Name 
-        th P1 Rank (orig)
-        th P1 Range Rank 
-        th P2 Name 
-        th P2 Rank (orig)
-        th P2 Range Rank 
-        th P1 Odds
-        th P2 Odds
-        th P1 Bet 
-        th P1 Inv. 
-        th P2 Bet 
+        th.p1 Name 
+        th.p1 Rank
+        th.p1 Range Rank 
+        th.p2 Name 
+        th.p2 Rank
+        th.p2 Range Rank 
+        th.p1 Odds
+        th.p2 Odds
+        th.p1 Bet 
+        th.p1 Inv. 
+        th.p2 Bet 
         th Fav Correct Score
         th Type 
         th Surface 
