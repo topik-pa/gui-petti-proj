@@ -22,6 +22,7 @@ function resetTable (rows) {
       <td class="p1">${row.player1.odds}</td>
       <td class="p2">${row.player2.odds}</td>
       <td class="p1">${row.player1.bet}</td>
+      <td class="p1">${row.player1.rangeBet}</td>
       <td class="p1">${row.player1.inv}</td>
       <td class="p2">${row.player2.bet}</td>
       <td>${row.favCorrectScore}</td>

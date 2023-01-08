@@ -45,6 +45,69 @@ const rankRanges = [
   2800,
   2900,
   3000]
+const betRanges = [
+  1.01,
+  1.1,
+  1.2,
+  1.3,
+  1.4,
+  1.5,
+  1.6,
+  1.7,
+  1.8,
+  1.9,
+  1.9,
+  2.0,
+  2.1,
+  2.2,
+  2.3,
+  2.4,
+  2.5,
+  2.6,
+  2.7,
+  2.8,
+  2.9,
+  3.0,
+  3.1,
+  3.2,
+  3.4,
+  3.5,
+  3.6,
+  3.7,
+  3.8,
+  3.9,
+  4.0,
+  4.1,
+  4.2,
+  4.3,
+  4.4,
+  4.5,
+  4.6,
+  4.7,
+  4.8,
+  4.9,
+  5.0,
+  5.1,
+  5.2,
+  5.3,
+  5.4,
+  5.5,
+  5.6,
+  5.7,
+  5.8,
+  5.9,
+  6.0,
+  6.1,
+  6.2,
+  6.3,
+  6.4,
+  6.5,
+  6.6,
+  6.7,
+  6.8,
+  6.9,
+  7.0
+]
 
 function getData () {
   const options = {
@@ -79,6 +142,7 @@ function adjustMatches () {
     setCorrectScore(match)
     setRangeRank(match)
     setFavorite(match)
+    setFavQuotaRange(match) // After setFavorite()
   }
 }
 
@@ -128,6 +192,23 @@ function setRangeRank (match) {
     if (p2Rank < rankRanges[i]) {
       p2RangeRank = rankRanges[i - 1] // rankRanges[i]
       match.player2.rangeRank = p2RangeRank
+      break
+    }
+  }
+}
+
+function setFavQuotaRange (match) {
+  const p1Bet = match.player1.bet
+  let p1RangeBet
+
+  for (let i = 0; i < betRanges.length; i++) {
+    if (i === betRanges.length - 1) {
+      match.player1.rangeBet = betRanges[i]
+      break
+    }
+    if (p1Bet < betRanges[i]) {
+      p1RangeBet = betRanges[i - 1] //
+      match.player1.rangeBet = p1RangeBet
       break
     }
   }

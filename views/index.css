@@ -50,10 +50,10 @@ tbody tr:hover {
   color: var(--white);
 }
 
-thead {
+thead.thead {
   background: var(--white);
   position: sticky;
-  top: 0;
+  top: -1px;
 }
 
 th.p1, td.p1 {
@@ -67,7 +67,7 @@ td.bet365 {
   background-color: rgba(0, 204, 0, .1);
 }
 td.williamhill {
-  background-color: rgba(0, 102, 255, .1);
+  background-color: rgba(0, 0, 153, .1);
 }
 
 
@@ -94,5 +94,5 @@ span.legend.bet365::before {
   background-color: rgba(0, 204, 0, .3);
 }
 span.legend.williamhill::before {
-  background-color: rgba(0, 102, 255, .3);
+  background-color: rgba(0, 0, 153, .3);
 }

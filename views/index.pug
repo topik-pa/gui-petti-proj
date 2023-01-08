@@ -11,7 +11,7 @@ block main
   main
     span(class="legend pl1") player 1 (favorite)
     span(class="legend pl2") player 2 (under dog)
-    span(class="legend bet365") origin = bet365
+    span(class="legend bet365") origin = Bet365
     span(class="legend williamhill") origin = William Hill
     table(id="table")
       caption Total matches: 
@@ -31,7 +31,7 @@ block main
             input(type="text", data-path="player1,name", placeholder="Search")
         th 
           div
-            span(class="sort", data-sorting="", data-path="player1,rank") &#8249;
+            span(class="sort", data-sorting="", data-path="player1,origRank") &#8249;
         th 
         th 
           div
@@ -39,20 +39,21 @@ block main
             input(type="text", data-path="player2,name", placeholder="Search")
         th 
           div
-            span(class="sort", data-sorting="", data-path="player2,rank") &#8249;
+            span(class="sort", data-sorting="", data-path="player2,origRank") &#8249;
         th 
         th 
         th 
         th 
         th  
         th 
+        th
         th 
         th 
         th 
         th  
         th  
         th  
-      thead
+      thead(class="thead")
         th Date
         th Hours 
         th.p1 Name 
@@ -64,6 +65,7 @@ block main
         th.p1 Odds
         th.p2 Odds
         th.p1 Bet 
+        th.p1 Bet Range
         th.p1 Inv. 
         th.p2 Bet 
         th Fav Correct Score
