@@ -34,13 +34,15 @@ block main
             span(class="sort", data-sorting="", data-path="player2,name") &#8249;
             input(type="text", data-path="player2,name", placeholder="Search")
         th
+        th 
+        th 
           div
-            span(class="sort", data-sorting="", data-path="player1,origRank") &#8249;
+            span(class="sort", data-sorting="", data-path="player1,rangeRank") &#8249;
+            input(type="text", data-path="player1,rangeRank", placeholder="Search")
         th 
           div
-            span(class="sort", data-sorting="", data-path="player2,origRank") &#8249;
-        th 
-        th 
+            span(class="sort", data-sorting="", data-path="player2,rangeRank") &#8249;
+            input(type="text", data-path="player2,rangeRank", placeholder="Search")
         th 
         th 
         th 
@@ -48,9 +50,15 @@ block main
         th 
         th
         th 
-        th 
-        th 
-        th  
+        th
+          div
+            input(type="text", data-path="association", placeholder="Search")
+        th
+          div
+            input(type="text", data-path="surface", placeholder="Search")
+        th
+          div
+            input(type="text", data-path="tournament", placeholder="Search")
         th  
         th  
       thead(class="thead")
@@ -69,7 +77,7 @@ block main
         th.p1 Bet Range
         th.p1 Inv. 
         th Fav Correct Score
-        th Type 
+        th Association 
         th Surface 
         th Tournament 
         th Round 
