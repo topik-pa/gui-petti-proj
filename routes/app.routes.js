@@ -45,7 +45,7 @@ const rankRanges = [
   2800,
   2900,
   3000]
-const betRanges = [
+const oddsRanges = [
   1.01,
   1.10,
   1.20,
@@ -139,7 +139,7 @@ function getData () {
 function adjustMatches () {
   if (!matches.length) return
   for (const match of matches) {
-    setCorrectScore(match)
+    // setCorrectScore(match)
     setRangeRank(match)
     setFavorite(match)
     setFavQuotaRange(match) // After setFavorite()
@@ -157,14 +157,14 @@ function setFavorite (match = {}) {
   }
 }
 
-function setCorrectScore (match = {}) {
+/* function setCorrectScore (match = {}) {
   const cs20 = match.correctScore['20']
   const cs02 = match.correctScore['02']
   match.favCorrectScore = null
   if (cs20 && cs02) {
     match.favCorrectScore = (cs20 <= cs02) ? cs20 : cs02
   }
-}
+} */
 
 function setRangeRank (match) {
   const p1Rank = match.player1.origRank
@@ -198,17 +198,17 @@ function setRangeRank (match) {
 }
 
 function setFavQuotaRange (match) {
-  const p1Bet = match.player1.bet
-  let p1RangeBet
+  const p1Odds = match.player1.odds
+  let p1RangeOdds
 
-  for (let i = 0; i < betRanges.length; i++) {
-    if (i === betRanges.length - 1) {
-      match.player1.rangeBet = betRanges[i].toFixed(2)
+  for (let i = 0; i < oddsRanges.length; i++) {
+    if (i === oddsRanges.length - 1) {
+      match.player1.rangeOdds = oddsRanges[i].toFixed(2)
       break
     }
-    if (p1Bet < betRanges[i]) {
-      p1RangeBet = betRanges[i - 1] //
-      match.player1.rangeBet = p1RangeBet.toFixed(2)
+    if (p1Odds < oddsRanges[i]) {
+      p1RangeOdds = oddsRanges[i - 1] //
+      match.player1.rangeOdds = p1RangeOdds.toFixed(2)
       break
     }
   }
