@@ -18,9 +18,6 @@
 @import "/components/shared/disclaimer/disclaimer.css";
 
 @import "/views/index.css";
-@import "/views/match/match.css";
-@import "/views/contatti/contatti.css";
-@import "/views/privacy/privacy.css";
 @import "/views/404/404.css";
 
 @import "./responsive.css";

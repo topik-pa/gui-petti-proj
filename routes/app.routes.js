@@ -149,12 +149,24 @@ function adjustMatches () {
 function setFavorite (match = {}) {
   const p1Odds = match.player1.odds
   const p2Odds = match.player2.odds
-  let tempPlayer
+
+  const score = match.score.trim()
+  const arrScore = score.split(' ')
+
   if ((p1Odds && p2Odds) && (p1Odds > p2Odds)) {
-    tempPlayer = match.player1
+    // p2 becomes p1
+    const tempPlayer = match.player1
     match.player1 = match.player2
     match.player2 = tempPlayer
+
+    // swap score
+    const temp = arrScore[0]
+    arrScore[0] = arrScore[2]
+    arrScore[2] = temp
+    match.score = arrScore.join(' ')
   }
+  // W or L?
+  match.favoriteWin = (arrScore[0] > arrScore[2])
 }
 
 /* function setCorrectScore (match = {}) {
@@ -218,8 +230,6 @@ getData()
 
 module.exports = app => {
   app.get('/', (req, res) => {
-    // setCorrectScore(matches)
-    // setRangeRank(matches)
     adjustMatches(matches)
     res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })

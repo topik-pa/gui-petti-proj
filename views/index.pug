@@ -26,6 +26,8 @@ block main
             span(class="sort", data-sorting="", data-path="hours") &#8249;
             input(type="text", data-path="hours", placeholder="Search") 
         th
+        th
+        th
           div
             span(class="sort", data-sorting="", data-path="player1,name") &#8249;
             input(type="text", data-path="player1,name", placeholder="Search")
@@ -56,12 +58,17 @@ block main
             input(type="text", data-path="surface", placeholder="Search")
         th
           div
-            input(type="text", data-path="tournament", placeholder="Search")
+            input(type="text", data-path="tournament,name", placeholder="Search")
         th  
+          div 
+            span(class="sort", data-sorting="", data-path="tournament,value") &#8249;
+        th
         th  
       thead(class="thead")
         th Date
         th Hours 
+        th Score
+        th W/L
         th.p1 Name 
         th.p2 Name 
         th.p1 Rank
@@ -75,7 +82,8 @@ block main
         th.p1 Correct Score
         th Association 
         th Surface 
-        th Tournament 
+        th Tour.
+        th Tour. value
         th Round 
         th  
       tbody 
