@@ -45,6 +45,13 @@ th, td {
   padding: .3rem;
 }
 
+td {
+  max-width: 12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 tbody tr:hover {
   background-color: var(--darker-gray);
   color: var(--white);

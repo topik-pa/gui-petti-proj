@@ -25,7 +25,7 @@ function resetTable (rows) {
       <td class="p2">${row.player2.odds.toFixed(2)}</td>
       <td class="p1">${row.player1.rangeOdds}</td>
       <td class="p1">${row.inv}</td>
-      <td class="p1">${row.favCorrectScore}</td>
+      <td class="p1">${row.correctScore}</td>
       <td>${row.association}</td>
       <td>${row.surface}</td>
       <td><a title="${row.tournament.name}" href="${row.tournament.url}">${row.tournament.name}</a></td>
