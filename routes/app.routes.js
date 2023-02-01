@@ -112,8 +112,8 @@ const oddsRanges = [
 function getData () {
   const options = {
     method: 'GET',
-    hostname: 'http://www.localhost',
-    port: 8080,
+    hostname: 'petti-proj.herokuapp.com',
+    port: null,
     path: '/matches'
   }
   const request = http.request(options, function (response) {
