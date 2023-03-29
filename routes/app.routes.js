@@ -136,6 +136,26 @@ function getData () {
   })
 }
 
+function countStringIDs () {
+  if (!matches.length) return
+  const players = ['player1', 'player2']
+  for (const match of matches) {
+    for (const player of players) {
+      let counter = 0
+      const currSID = match[player].stringId
+
+      for (let i = 0; i < matches.length; i++) {
+        const innerMatch = matches[i]
+        if (currSID === innerMatch[player].stringId) {
+          counter++
+        }
+      }
+
+      match[player].stringIdCount = counter
+    }
+  }
+}
+
 function adjustMatches () {
   if (!matches.length) return
   for (const match of matches) {
@@ -143,7 +163,16 @@ function adjustMatches () {
     setRangeRank(match)
     setFavorite(match)
     setFavQuotaRange(match) // After setFavorite()
+    setUniqueStringForWAndL(match) // After all
   }
+}
+
+function setUniqueStringForWAndL (match) {
+  const uniqueStringP1 = `${match.player1.name.replace(/ /g, '_')}%${match.tournament.value}%${match.association}%${match.surface}%${match.player2.rangeRank}%${match.favoriteWin ? 'win' : 'lose'}`
+  const uniqueStringP2 = `${match.player2.name.replace(/ /g, '_')}%${match.tournament.value}%${match.association}%${match.surface}%${match.player1.rangeRank}%${match.favoriteWin ? 'lose' : 'win'}`
+
+  match.player1.stringId = uniqueStringP1
+  match.player2.stringId = uniqueStringP2
 }
 
 function setFavorite (match = {}) {
@@ -231,6 +260,7 @@ getData()
 module.exports = app => {
   app.get('/', (req, res) => {
     adjustMatches(matches)
+    countStringIDs(matches)
     res.locals.matches = matches
     res.render('index', { id: 'home', title: 'Home', url: req.url })
   })

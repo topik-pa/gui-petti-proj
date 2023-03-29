@@ -32,6 +32,10 @@ function resetTable (rows) {
       <td>${row.tournament.value}</td>
       <td>${row.round}</td>
       <td class="${row.dataOrigin}"><a href="https://www.tennisexplorer.com/match-detail/?id=${row.id}" target="_blank" rel="noopener noreferrer">match</a></td>
+      <td class="p1">${row.player1.stringId}</td>
+      <td class="p1">${row.player1.stringIdCount}</td>
+      <td class="p2">${row.player2.stringId}</td>
+      <td class="p1">${row.player2.stringIdCount}</td>
     `
     $tBody.appendChild($tr)
   }
