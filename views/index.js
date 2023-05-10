@@ -129,7 +129,7 @@ const buildRows = (rows) => {
       <td class="p1">${row.player1.stringId}</td>
       <td class="p1">${row.player1.stringIdCount}</td>
       <td class="p2">${row.player2.stringId}</td>
-      <td class="p1">${row.player2.stringIdCount}</td>
+      <td class="p2">${row.player2.stringIdCount}</td>
      `
     // APIRELATED
     $tBody.appendChild($tr)
