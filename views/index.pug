@@ -13,91 +13,43 @@ block main
     span(class="legend pl2") player 2 (under dog)
     span(class="legend bet365") origin = Bet365
     span(class="legend williamhill") origin = William Hill
-    table(id="table")
-      caption Total matches: 
-        span
-      thead
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="date") &#8249;
-            input(type="text", data-path="date", placeholder="Search")
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="hours") &#8249;
-            input(type="text", data-path="hours", placeholder="Search") 
-        th
-        th
-        th
-          div
-            span(class="sort", data-sorting="", data-path="player1,name") &#8249;
-            input(type="text", data-path="player1,name", placeholder="Search")
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="player2,name") &#8249;
-            input(type="text", data-path="player2,name", placeholder="Search")
-        th
-        th 
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="player1,rangeRank") &#8249;
-            input(type="text", data-path="player1,rangeRank", placeholder="Search")
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="player2,rangeRank") &#8249;
-            input(type="text", data-path="player2,rangeRank", placeholder="Search")
-        th 
-        th 
-        th 
-        th
-        th 
-        th
-          div
-            input(type="text", data-path="association", placeholder="Search")
-        th
-          div
-            input(type="text", data-path="surface", placeholder="Search")
-        th
-          div
-            input(type="text", data-path="tournament,name", placeholder="Search")
-        th  
-          div 
-            span(class="sort", data-sorting="", data-path="tournament,value") &#8249;
-        th
-        th 
-        th 
-        th 
-          div
-            span(class="sort", data-sorting="", data-path="player1,stringIdCount") &#8249;
-        th
-        th
-          div
-            span(class="sort", data-sorting="", data-path="player2,stringIdCount") &#8249;        
-      thead(class="thead")
-        th Date
-        th Hours 
-        th Score
-        th W/L
-        th.p1 Name 
-        th.p2 Name 
-        th.p1 Rank
-        th.p2 Rank
-        th.p1 Range Rank
-        th.p2 Range Rank 
-        th.p1 Odds
-        th.p2 Odds
-        th.p1 Odds Range
-        th.p1 Inv. 
-        th.p1 Correct Score
-        th Association 
-        th Surface 
-        th Tour.
-        th Tour. value
-        th Round 
-        th Link
-        th.p1 SID
-        th.p1 SID Count
-        th.p2 SID
-        th.p2 SID Count
-      tbody 
-
+    div(id="dtable")
+      table
+        thead 
+          //- APIRELATED
+          th(data-path="id") id
+          th(data-path="date") Date
+          th(data-path="hours") Hours
+          th(data-path="score") Score
+          th() W/L
+          th(class="p1", data-path="player1.name") Name
+            input(type="text", placeholder="Filter...")
+          th(class="p2", data-path="player2.name") Name
+            input(type="text", placeholder="Filter...")
+          th(class="p1", data-path="player1.origRank") Rank
+          th(class="p2", data-path="player2.origRank") Rank
+          th(class="p1") Range Rank
+          th(class="p2") Range Rank
+          th(class="p1", data-path="player1.odds") Odds
+          th(class="p2", data-path="player2.odds") Odds
+          th(class="p1") Odds Range
+          th(class="p1", data-path="inv") Inv.
+          th(class="p1", data-path="correctScore") Correct Score
+          th(data-path="association") Association
+          th(data-path="surface") Surface
+          th(data-path="tournament.name") Tour
+            input(type="text", placeholder="Filter...")
+          th(data-path="tournament.value") Tour value
+          th(data-path="round") Round
+          th(data-path="url") Link
+          th(class="p1") SID
+          th(class="p1") SID Count
+          th(class="p2") SID
+          th(class="p2") SID Count
+          //- APIRELATED
+        tbody
+      div(id="pagination")
+        div Page #[span(id="page")] of #[span(id="pages")] pages 
+        ul
+        div Showing #[span(id="start")] - #[span(id="end")] of #[span(id="total")] results
 

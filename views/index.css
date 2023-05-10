@@ -9,17 +9,13 @@ small {
   font-size: .8rem;
 }
 
+#dTable {
+  overflow-x: auto;
+}
+
 table {
   font-size: 1rem;
   width: 100%;
-}
-
-caption {
-  margin: 1rem 0;
-  text-align: left;
-}
-caption span {
-  font-weight: bold;
 }
 
 th div{
@@ -30,22 +26,37 @@ th div{
 th input{
   width: 7rem;
 }
-th span{
-  font-size: 2.5rem;
-  transform: rotate(90deg);
-  display: inline-block;
-  transform-origin: center;
+#dtable th[data-path]::before {
   cursor: pointer;
-  margin: 0 1rem;
-}
-th span[data-sorting=desc]{
+  content: '\26DB';
   transform: rotate(-90deg);
+  display: inline-block;
+  color: var(--gray)
+}
+#dtable th[data-order=desc]::before {
+  transform: rotate(0deg);
+  color: var(--primary)
+}
+#dtable th[data-order=asc]::before {
+  transform: rotate(-180deg);
+  color: var(--primary)
+}
+#dtable th input {
+  border: 1px solid var(--gray);
+  background-color: var(--tertiary);
+  margin-left: var(--x-small-space);
+  margin-top: var(--gap);
+  width: 5rem;
+  font-size: var(--font-size-very-small);
+  color: var(--primary);
+  outline: none;
+  font-style: italic;
 }
 th, td {
-  padding: .3rem;
+  padding: 0.3rem 0.2rem;
 }
 
-td {
+th, td {
   max-width: 12rem;
   white-space: nowrap;
   overflow: hidden;
@@ -102,4 +113,58 @@ span.legend.bet365::before {
 }
 span.legend.williamhill::before {
   background-color: rgba(0, 0, 153, .3);
+}
+
+
+#pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--gray);
+  padding-top: var(--normal-space);
+  margin-top: var(--normal-space);
+  font-size: var(--font-size-small)
+}
+#pagination span {
+  font-weight: 500;
+}
+#pagination div {
+  width: 20%;
+}
+#pagination div:nth-child(3) {
+  text-align: right;
+}
+#pagination ul {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  padding: 0 var(--x-small-space);
+  justify-content: center;
+}
+#pagination li {
+  margin: var(--x-small-space);
+  cursor: pointer;
+}
+#pagination li::marker {
+  content: none;
+}
+#pagination li:hover, #pagination li.active {
+  text-decoration: underline;
+}
+#pagination li.active {
+  cursor: auto;
+}
+
+#filter {
+  margin: var(--small-space) 0;
+}
+
+@media screen and (max-width: 1366px) {
+  #dtable th::before  {
+    content: '';
+  }
+  #dtable th input {
+    display: block;
+    margin-left: 0;
+  }
 }
