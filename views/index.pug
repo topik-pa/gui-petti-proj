@@ -17,9 +17,9 @@ block main
           //- APIRELATED
           th(data-path="id") id
           th(data-path="date") Date
-          th(data-path="hours") Hours
-          th(data-path="score") Score
-          th() W/L
+          th Hours
+          th Score
+          th W/L
           th(class="p1", data-path="player1.name") Name
             input(type="text", placeholder="Filter...")
           th(class="p2", data-path="player2.name") Name
@@ -32,14 +32,15 @@ block main
           th(class="p2", data-path="player2.odds") Odds
           th(class="p1") Odds Range
           th(class="p1", data-path="inv") Inv.
+            input(type="text", placeholder="Filter...")
           th(class="p1", data-path="correctScore") Correct Score
           th(data-path="association") Association
           th(data-path="surface") Surface
           th(data-path="tournament.name") Tour
             input(type="text", placeholder="Filter...")
           th(data-path="tournament.value") Tour value
-          th(data-path="round") Round
-          th(data-path="url") Link
+          th Round
+          th Link
           th(class="p1") SID
           th(class="p1") SID Count
           th(class="p2") SID

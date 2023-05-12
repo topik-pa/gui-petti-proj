@@ -9,7 +9,7 @@ small {
   font-size: .8rem;
 }
 
-#dTable {
+#dtable {
   overflow-x: auto;
 }
 
@@ -26,8 +26,10 @@ th div{
 th input{
   width: 7rem;
 }
-#dtable th[data-path]::before {
+#dtable th {
   cursor: pointer;
+}
+#dtable th[data-path]::before {
   content: '\26DB';
   transform: rotate(-90deg);
   display: inline-block;
