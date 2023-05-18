@@ -7,10 +7,14 @@ block append meta
   link(rel="canonical", href=proj_url)
 block main 
   main
-    span(class="legend pl1") player 1 (favorite)
-    span(class="legend pl2") player 2 (under dog)
-    span(class="legend bet365") origin = Bet365
-    span(class="legend williamhill") origin = William Hill
+    section(id="legend")
+      div
+        span(class="pl1") player 1 (favorite)
+        span(class="pl2") player 2 (under dog)
+      div
+        span(class="bet365") origin = Bet365
+        span(class="williamhill") origin = William Hill
+        span origin = Mixed
     div(id="dtable")
       table
         thead 
