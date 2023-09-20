@@ -16,41 +16,42 @@ block main
         span(class="williamhill") origin = William Hill
         span origin = Mixed
     div(id="dtable")
-      table
-        thead 
-          //- APIRELATED
-          th(data-path="id") id
-          th(data-path="date") Date
-          th Hours
-          th Score
-          th W/L
-          th(class="p1", data-path="player1.name") Name
-            input(type="text", placeholder="Filter...")
-          th(class="p2", data-path="player2.name") Name
-            input(type="text", placeholder="Filter...")
-          th(class="p1", data-path="player1.origRank") Rank
-          th(class="p2", data-path="player2.origRank") Rank
-          th(class="p1") Range Rank
-          th(class="p2") Range Rank
-          th(class="p1", data-path="player1.odds") Odds
-          th(class="p2", data-path="player2.odds") Odds
-          th(class="p1") Odds Range
-          th(class="p1", data-path="inv") Inv.
-            input(type="text", placeholder="Filter...")
-          th(class="p1", data-path="correctScore") Correct Score
-          th(data-path="association") Association
-          th(data-path="surface") Surface
-          th(data-path="tournament.name") Tour
-            input(type="text", placeholder="Filter...")
-          th(data-path="tournament.value") Tour value
-          th Round
-          th Link
-          th(class="p1") SID
-          th(class="p1") SID Count
-          th(class="p2") SID
-          th(class="p2") SID Count
-          //- APIRELATED
-        tbody
+      div
+        table
+          thead 
+            //- APIRELATED
+            th(data-path="id") id
+            th(data-path="date") Date
+            th Hours
+            th Score
+            th W/L
+            th(class="p1", data-path="player1.name") Name
+              input(type="text", placeholder="Filter...")
+            th(class="p2", data-path="player2.name") Name
+              input(type="text", placeholder="Filter...")
+            th(class="p1", data-path="player1.origRank") Rank
+            th(class="p2", data-path="player2.origRank") Rank
+            th(class="p1") Range Rank
+            th(class="p2") Range Rank
+            th(class="p1", data-path="player1.odds") Odds
+            th(class="p2", data-path="player2.odds") Odds
+            th(class="p1") Odds Range
+            th(class="p1", data-path="inv") Inv.
+              input(type="text", placeholder="Filter...")
+            th(class="p1", data-path="correctScore") Correct Score
+            th(data-path="association") Association
+            th(data-path="surface") Surface
+            th(data-path="tournament.name") Tour
+              input(type="text", placeholder="Filter...")
+            th(data-path="tournament.value") Tour value
+            th Round
+            th Link
+            th(class="p1") SID
+            th(class="p1" data-path="player1.stringIdCount") SID Count
+            th(class="p2") SID
+            th(class="p2" data-path="player2.stringIdCount") SID Count
+            //- APIRELATED
+          tbody
       div(id="pagination")
         div Page #[span(id="page")] of #[span(id="pages")] pages 
         ul

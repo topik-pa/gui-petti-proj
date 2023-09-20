@@ -9,7 +9,7 @@ small {
   font-size: .8rem;
 }
 
-#dtable {
+#dtable div {
   overflow-x: auto;
 }
 

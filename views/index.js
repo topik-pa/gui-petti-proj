@@ -16,7 +16,7 @@ let filterTimer
 
 const tConfig = { // APIRELATED
   url: 'https://petti-proj.herokuapp.com/matches',
-  limit: 25,
+  limit: 50,
   page: 0,
   total: undefined,
   pages: undefined,
