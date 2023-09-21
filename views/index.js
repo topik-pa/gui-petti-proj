@@ -130,11 +130,11 @@ const buildRows = (rows) => {
       <td class="p1">${row.player1.stringIdCount}</td>
       <td class="p2">${row.player2.stringId}</td>
       <td class="p2">${row.player2.stringIdCount}</td>
-      <td>${row.sid2.value}</td>
-      <td>${row.sid2.countW}</td>
-      <td>${row.sid2.countL}</td>
-      <td>${row.sid2.perc}</td>
-      <td class="${row.sid2.result}"></td>
+      <td>${row.sid2?.value}</td>
+      <td>${row.sid2?.countW}</td>
+      <td>${row.sid2?.countL}</td>
+      <td>${row.sid2?.perc}</td>
+      <td class="${row.sid2?.result}"></td>
      `
     // APIRELATED
     $tBody.appendChild($tr)
