@@ -61,3 +61,13 @@ table th {
 table th, td {
   border: 1px solid gray;
 }
+
+.gray {
+  background-color: var(--light-gray);
+}
+.red {
+  background-color: var(--red);
+}
+.green {
+  background-color: var(--green);
+}

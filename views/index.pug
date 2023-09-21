@@ -16,7 +16,7 @@ block main
         span(class="williamhill") origin = William Hill
         span origin = Mixed
     div(id="dtable")
-      div
+      div(class="tWrap")
         table
           thead 
             //- APIRELATED
@@ -50,6 +50,11 @@ block main
             th(class="p1" data-path="player1.stringIdCount") SID Count
             th(class="p2") SID
             th(class="p2" data-path="player2.stringIdCount") SID Count
+            th(data-path="sid2.value") SID2
+            th(data-path="sid2.countW") SID2 W
+            th(data-path="sid2.countL") SID2 L
+            th(data-path="sid2.perc") SID2 W %
+            th SID2 Res
             //- APIRELATED
           tbody
       div(id="pagination")
