@@ -15,8 +15,8 @@ const $filters = $tHeader.querySelectorAll('input')
 let filterTimer
 
 const tConfig = { // APIRELATED
-  url: 'https://petti-proj.herokuapp.com/matches',
-  limit: 50,
+  url: 'http://localhost:8080/matches', //
+  limit: 100,
   page: 0,
   total: undefined,
   pages: undefined,
@@ -27,7 +27,7 @@ const tConfig = { // APIRELATED
 
 const queryString = {
   filters: [],
-  sorts: [],
+  sorts: [{ sortBy: 'time', order: 'desc' }], // [{ sortBy: 'time', order: 'desc' }],
   get () {
     let qs = '?'
     qs += `page=${tConfig.page}`
@@ -105,7 +105,7 @@ const buildRows = (rows) => {
     // APIRELATED
     $tr.innerHTML = `
       <td>${row.id}</td>
-      <td>${row.date}</td>
+      <td>${new Date(row.time).toLocaleDateString()}</td>
       <td>${row.hours}</td>
       <td>${row.score}</td>
       <td>${row.favoriteWin ? 'W' : 'L'}</td>
