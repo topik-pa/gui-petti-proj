@@ -15,7 +15,7 @@ const $filters = $tHeader.querySelectorAll('input')
 let filterTimer
 
 const tConfig = { // APIRELATED
-  url: 'http://localhost:8080/matches', //
+  url: 'https://petti-proj.herokuapp.com/matches', //
   limit: 100,
   page: 0,
   total: undefined,
