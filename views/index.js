@@ -134,7 +134,7 @@ const buildRows = (rows) => {
       <td>${row.sid2?.countW}</td>
       <td>${row.sid2?.countL}</td>
       <td>${row.sid2?.perc}</td>
-      <td class="${row.sid2?.result}"></td>
+      <td class="${row.sid2?.result}">${row.sid2?.result}</td>
      `
     // APIRELATED
     $tBody.appendChild($tr)
